@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nuyo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="./index.html" aria-label="Nuyo home">
+          <span class="brand-mark">♪</span>
+          <span>Nuyo</span>
+        </a>
+
+        <nav class="nav">
+          <button class="nav-item active" data-view="home" title="Home">
+            <span>⌂</span>
+            <span>Home</span>
+          </button>
+          <button class="nav-item" data-view="recommendations" title="Recommendations">
+            <span>✦</span>
+            <span>For You</span>
+          </button>
+          <button class="nav-item" data-view="library" title="Library">
+            <span>▦</span>
+            <span>Library</span>
+          </button>
+          <button class="nav-item" data-view="offline" title="Downloads">
+            <span>⇩</span>
+            <span>Offline</span>
+          </button>
+        </nav>
+
+        <h2 class="side-title">Playlists</h2>
+        <div class="playlist-list" id="playlistList"></div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <label class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Search songs, artists, moods" />
+          </label>
+          <div class="user-chip">
+            <span>Purva</span>
+            <strong>P</strong>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="kicker">fresh mix</p>
+            <h1>Music that follows your mood</h1>
+            <p>Stream playable synth tracks, build a queue from playlists, and save favorites for offline listening.</p>
+            <button class="primary-btn" id="heroPlay">▶ Play Daily Mix</button>
+          </div>
+        </section>
+
+        <section class="section" id="recommendations">
+          <div class="section-head">
+            <h2>Recommended</h2>
+            <div class="tabs" id="moodTabs"></div>
+          </div>
+          <div class="card-grid" id="recommendationGrid"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2 id="queueTitle">Trending Tracks</h2>
+            <button class="quiet-btn" id="shuffleButton">⤨ Shuffle</button>
+          </div>
+          <div class="track-list" id="trackList"></div>
+        </section>
+      </main>
+
+      <aside class="queue-panel">
+        <section class="now-card">
+          <div class="now-art" id="nowArt"></div>
+          <p class="kicker">now playing</p>
+          <h2 id="nowTitle">Electric Bloom</h2>
+          <p id="nowArtist">Nova Vale</p>
+          <div class="mini-stats">
+            <span><strong id="likedCount">0</strong> liked</span>
+            <span><strong id="downloadCount">0</strong> offline</span>
+          </div>
+        </section>
+
+        <section class="downloads">
+          <div class="section-head compact">
+            <h2>Downloads</h2>
+            <button class="quiet-btn" id="clearDownloads">Clear</button>
+          </div>
+          <div id="downloadList"></div>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="player">
+      <div class="player-song">
+        <div class="player-art" id="playerArt"></div>
+        <div>
+          <strong id="playerTitle">Electric Bloom</strong>
+          <span id="playerArtist">Nova Vale</span>
+        </div>
+      </div>
+
+      <div class="player-center">
+        <div class="controls">
+          <button id="prevButton" title="Previous">⏮</button>
+          <button class="play-btn" id="playButton" title="Play">▶</button>
+          <button id="nextButton" title="Next">⏭</button>
+          <button id="likeButton" title="Like">♡</button>
+          <button id="downloadButton" title="Download">⇩</button>
+        </div>
+        <div class="progress-row">
+          <span id="elapsed">0:00</span>
+          <div class="progress"><span id="progressFill"></span></div>
+          <span id="duration">3:42</span>
+        </div>
+      </div>
+
+      <label class="volume">
+        <span>Volume</span>
+        <input id="volumeSlider" type="range" min="0" max="100" value="70" />
+      </label>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
